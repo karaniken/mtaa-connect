@@ -19,6 +19,7 @@
 ---
 
 ## Week 1: Local Environment Setup  
+
 **Title:** Installation and Testing of Local Development Environment for Mtaa‑Connect  
 
 ### Required Evidence
@@ -47,7 +48,11 @@ I installed Apache, MariaDB, and PHP on Arch Linux to set up a local development
 
 ---
 
+
+
+
 ## Week 2: Wireframes and Database Schema  
+
 **Title:** User Interface Planning and System Design for Mtaa‑Connect
 
 ### Required Evidence
@@ -73,3 +78,42 @@ I installed Apache, MariaDB, and PHP on Arch Linux to set up a local development
 ### Student Reflection (100 words)
 
 This week I designed the wireframes for Mtaa‑Connect, focusing on the landlord and tenant user flows. The homepage prioritises search and discovery, while the registration page includes role selection to separate landlord and tenant experiences. I also designed the database schema with three tables: `users`, `properties`, and `inquiries`. The relationships ensure that properties are linked to landlords and inquiries are linked to both tenants and properties. I created the SQL script and tested it in phpMyAdmin – all tables were created successfully. This foundation will guide the coding in the coming weeks, ensuring a secure and structured backend.
+
+
+
+
+
+
+## Week 3: JavaScript Validation and PHP Registration  
+**Title:** Frontend Interaction and Backend Foundations for Mtaa‑Connect
+
+### Required Evidence
+
+**Fig 1: Registration form (red/purple theme)**  
+![Fig 1: Registration form](Week3/screenshots/fig1-register-form.png)
+
+**Fig 2: JavaScript validation errors on empty fields**  
+![Fig 2: Validation errors](Week3/screenshots/fig2-validation-errors.png)
+
+**Fig 3: Password and confirm password validation**  
+![Fig 3: Password validation](Week3/screenshots/fig3-password-validation.png)
+
+**Fig 4: Successful registration message**  
+![Fig 4: Registration success](Week3/screenshots/fig4-registration-success.png)
+
+**Fig 5: New user record in the database (phpMyAdmin)**  
+![Fig 5: Database record](Week3/screenshots/fig5-database-record.png)
+
+**Fig 6: PHP backend processing code snippet**  
+![Fig 6: PHP code](Week3/screenshots/fig6-php-code.png)
+
+### Student Reflection (100 words)
+
+This week I built a registration system for Mtaa‑Connect with both client‑side and server‑side validation. 
+The JavaScript checks for empty fields, email format, phone format, password length, and password confirmation before submission. 
+On the PHP side, I used `password_hash()` to securely store passwords, `mysqli_real_escape_string()` to prevent SQL injection, and checked for duplicate emails to avoid conflicts. 
+The form follows the red and purple colour scheme and is responsive. 
+I tested the system with valid and invalid inputs – errors are displayed clearly, and successful registrations save a new user to the `users` table. 
+This exercise reinforced the importance of layered validation and secure data handling.
+
+
