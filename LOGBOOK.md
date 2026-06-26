@@ -107,13 +107,49 @@ This week I designed the wireframes for Mtaa‑Connect, focusing on the landlord
 **Fig 6: PHP backend processing code snippet**  
 ![Fig 6: PHP code](Week3/screenshots/fig6-php-code.png)
 
-### Student Reflection (100 words)
+### Student Reflection.
 
 This week I built a registration system for Mtaa‑Connect with both client‑side and server‑side validation. 
 The JavaScript checks for empty fields, email format, phone format, password length, and password confirmation before submission. 
+
 On the PHP side, I used `password_hash()` to securely store passwords, `mysqli_real_escape_string()` to prevent SQL injection, and checked for duplicate emails to avoid conflicts. 
 The form follows the red and purple colour scheme and is responsive. 
+
 I tested the system with valid and invalid inputs – errors are displayed clearly, and successful registrations save a new user to the `users` table. 
 This exercise reinforced the importance of layered validation and secure data handling.
 
 
+
+
+## Week 4: Login System and Session Management  
+**Title:** User Authentication and Role‑Based Access for Mtaa‑Connect
+
+### Required Evidence
+
+**Fig 1: Login form (red/purple theme)**  
+![Fig 1: Login form](Week4/screenshots/fig1-login-form.png)
+
+**Fig 2: JavaScript validation – empty fields**  
+![Fig 2: Validation error](Week4/screenshots/fig2-validation-error.png)
+
+**Fig 3: Invalid login attempt error**  
+![Fig 3: Invalid login](Week4/screenshots/fig3-invalid-login.png)
+
+**Fig 4: Landlord dashboard**  
+![Fig 4: Landlord dashboard](Week4/screenshots/fig4-landlord-dashboard.png)
+
+**Fig 5: Tenant dashboard**  
+![Fig 5: Tenant dashboard](Week4/screenshots/fig5-tenant-dashboard.png)
+
+**Fig 6: Logout redirect to login page**  
+![Fig 6: Logout](Week4/screenshots/fig6-logout.png)
+
+### Student Reflection.
+
+This week I built the login system for Mtaa‑Connect using PHP sessions and password hashing. 
+The login page validates credentials against the `users` table using `password_verify()`. 
+On successful login, session variables are set and the user is redirected to a role‑specific dashboard. 
+Landlords see property management options, while tenants see search and inquiry options. 
+I also implemented a logout that destroys the session. 
+The dashboard pages are protected – any direct access redirects to login. 
+This provides a secure foundation for future features like property CRUD and inquiries.
