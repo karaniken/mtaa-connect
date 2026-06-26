@@ -153,3 +153,72 @@ Landlords see property management options, while tenants see search and inquiry 
 I also implemented a logout that destroys the session. 
 The dashboard pages are protected – any direct access redirects to login. 
 This provides a secure foundation for future features like property CRUD and inquiries.
+
+
+
+
+## Week 5: Property & Unit CRUD Operations  
+**Title:** Building the Core Portal – Property Management for Landlords and Browsing for Tenants
+
+### Required Evidence
+
+**Fig 1: Add Property form (landlord)**  
+![Fig 1: Add Property](Week5/screenshots/fig1-add-property.png)
+
+**Fig 2: Add Unit form under a property**  
+![Fig 2: Add Unit](Week5/screenshots/fig2-add-unit.png)
+
+**Fig 3: My Properties page with units listed**  
+![Fig 3: My Properties](Week5/screenshots/fig3-my-properties.png)
+
+**Fig 4: Browse page (tenant view)**  
+![Fig 4: Browse Units](Week5/screenshots/fig4-browse-units.png)
+
+**Fig 5: Search filter working**  
+![Fig 5: Search Filter](Week5/screenshots/fig5-search-filter.png)
+
+**Fig 6: Database tables (properties + units) in phpMyAdmin**  
+![Fig 6: Database Tables](Week5/screenshots/fig6-database-tables.png)
+
+### Student Reflection.
+
+This week I built the core functionality of the Mtaa‑Connect portal. 
+Landlords can now create properties (buildings/complexes) and add multiple units (apartments/rooms) under each property. 
+Each unit stores floor number, house number, size, price, amenities, and status (vacant/occupied/booked). 
+Tenants can browse all vacant units with search and filter by location and size. 
+This transforms the project from a simple auth system into a fully functional real‑estate marketplace. 
+I also learned about foreign keys and cascading deletes to maintain data integrity. 
+The portal is now ready for the final phase: inquiries and notifications.
+
+
+## Week 6: Inquiries and Notifications (CAT 1 Preparation)
+**Title:** Connecting Tenants and Landlords – Inquiry & Reply System
+
+### Required Evidence
+
+**Fig 1: Tenant inquiry form**
+![Fig 1: Inquiry Form](Week6/screenshots/fig1-inquiry-form.png)
+
+**Fig 2: Inquiry sent confirmation**
+![Fig 2: Inquiry Sent](Week6/screenshots/fig2-inquiry-sent.png)
+
+**Fig 3: Landlord dashboard with unread badge**
+![Fig 3: Dashboard Badge](Week6/screenshots/fig3-dashboard-badge.png)
+
+**Fig 4: Inquiries list for landlord**
+![Fig 4: Inquiries List](Week6/screenshots/fig4-inquiries-list.png)
+
+**Fig 5: Landlord reply form**
+![Fig 5: Reply Form](Week6/screenshots/fig5-reply-form.png)
+
+**Fig 6: Tenant inquiry history with reply**
+![Fig 6: Tenant History](Week6/screenshots/fig6-tenant-history.png)
+
+### Student Reflection (100 words)
+
+This week I built the inquiry and notification system, completing the marketplace interaction loop. 
+Tenants can now send inquiries about vacant units, and landlords receive them with unread badges. 
+Landlords can reply directly from the inquiries page, and tenants can view their inquiry history with landlord responses. 
+The system uses a dedicated `inquiries` table with `is_read` and `replied` flags to track communication status. 
+I also integrated unread counts into the dashboard, providing real‑time notifications. 
+This feature transforms the platform from a static listing site into an interactive marketplace where landlords and tenants can communicate seamlessly.
