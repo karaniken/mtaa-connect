@@ -99,41 +99,18 @@ $media_query = mysqli_query($conn, "SELECT * FROM unit_media WHERE unit_id = $un
 ?>
 <!DOCTYPE html>
 <html>
-<head><title>Upload Media – Mtaa-Connect</title>
-<style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Segoe UI', sans-serif; background: #1a0e1e; padding: 20px; }
-    .container { max-width: 1000px; margin: 0 auto; background: #2d1b33; padding: 30px; border-radius: 16px; border: 1px solid #7a2e8a; }
-    h1 { color: #c084d8; }
-    .subtitle { color: #b77dc2; margin-bottom: 20px; }
-    label { display: block; color: #d4a0e0; font-weight: 600; margin: 12px 0 5px; }
-    input, select { width: 100%; padding: 12px; border: 2px solid #5a2a6a; border-radius: 8px; background: #1f0f24; color: #f0e0f5; }
-    input:focus, select:focus { border-color: #b84fd4; outline: none; }
-    .btn { padding: 12px 25px; background: linear-gradient(135deg, #8b2f9b, #c84fd4); color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; }
-    .btn:hover { background: linear-gradient(135deg, #a03fb0, #d86ae6); }
-    .btn-danger { background: #8b1a1a; }
-    .btn-danger:hover { background: #a02020; }
-    .error-msg { background: #3b1a1a; color: #ff8a8a; padding: 12px; border-radius: 8px; margin-bottom: 16px; }
-    .success-msg { background: #1a3b1a; color: #8aff8a; padding: 12px; border-radius: 8px; margin-bottom: 16px; }
-    .media-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; margin-top: 20px; }
-    .media-item { background: #1f0f24; padding: 10px; border-radius: 10px; border: 1px solid #5a2a6a; text-align: center; }
-    .media-item img, .media-item video { max-width: 100%; max-height: 150px; border-radius: 6px; }
-    .media-item .label { color: #d4a0e0; margin: 8px 0; font-weight: bold; }
-    .media-item .type-badge { font-size: 11px; background: #4a1a5a; color: #c084d8; padding: 2px 10px; border-radius: 12px; }
-    .media-item .delete-btn { display: inline-block; margin-top: 8px; padding: 4px 12px; background: #8b1a1a; color: white; border: none; border-radius: 4px; text-decoration: none; font-size: 12px; }
-    .media-item .delete-btn:hover { background: #a02020; }
-    .back-link { display: block; margin-top: 20px; }
-    .back-link a { color: #c084d8; text-decoration: none; }
-    .form-row { display: flex; gap: 15px; align-items: end; }
-    .form-row > div { flex: 1; }
-    @media (max-width: 600px) { .form-row { flex-direction: column; } }
-</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Media – Mtaa-Connect</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 <div class="container">
+    <?php include 'includes/nav.php'; ?>
     <h1>📸 Manage Media</h1>
     <p class="subtitle">
-        Upload images and videos for <strong><?= htmlspecialchars($unit['property_title']) ?></strong> – 
+        Upload images and videos for <strong><?= htmlspecialchars($unit['property_title']) ?></strong> –
         Unit <?= htmlspecialchars($unit['house_number']) ?> (<?= $unit['size'] ?>)
     </p>
 

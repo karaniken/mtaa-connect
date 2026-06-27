@@ -38,29 +38,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 <!DOCTYPE html>
 <html>
-<head><title>Inquiry – Mtaa-Connect</title>
-<style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Segoe UI', sans-serif; background: #1a0e1e; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
-    .container { background: #2d1b33; padding: 40px; border-radius: 16px; max-width: 600px; width: 100%; border: 1px solid #7a2e8a; }
-    h1 { text-align: center; color: #c084d8; }
-    .subtitle { text-align: center; color: #b77dc2; margin-bottom: 20px; }
-    .unit-info { background: #1f0f24; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #5a2a6a; }
-    .unit-info h3 { color: #c084d8; }
-    .unit-info p { color: #b77dc2; }
-    label { display: block; color: #d4a0e0; font-weight: 600; margin: 10px 0 5px; }
-    textarea { width: 100%; padding: 12px; border: 2px solid #5a2a6a; border-radius: 8px; background: #1f0f24; color: #f0e0f5; min-height: 120px; resize: vertical; }
-    textarea:focus { border-color: #b84fd4; outline: none; }
-    .btn { width: 100%; padding: 14px; background: linear-gradient(135deg, #8b2f9b, #c84fd4); color: white; border: none; border-radius: 8px; font-size: 18px; cursor: pointer; }
-    .btn:hover { background: linear-gradient(135deg, #a03fb0, #d86ae6); }
-    .error-msg { background: #3b1a1a; color: #ff8a8a; padding: 12px; border-radius: 8px; margin-bottom: 16px; }
-    .success-msg { background: #1a3b1a; color: #8aff8a; padding: 12px; border-radius: 8px; margin-bottom: 16px; }
-    .back-link { display: block; text-align: center; margin-top: 15px; color: #b77dc2; }
-    .back-link a { color: #c084d8; text-decoration: none; }
-</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inquiry – Mtaa-Connect</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 <div class="container">
+    <?php include 'includes/nav.php'; ?>
     <h1>📩 Contact Landlord</h1>
     <div class="unit-info">
         <h3><?= htmlspecialchars($unit['property_title']) ?></h3>

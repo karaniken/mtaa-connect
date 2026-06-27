@@ -16,26 +16,15 @@ $result = mysqli_query($conn, $query);
 ?>
 <!DOCTYPE html>
 <html>
-<head><title>My Inquiries – Mtaa-Connect</title>
-<style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Segoe UI', sans-serif; background: #1a0e1e; padding: 20px; }
-    .container { max-width: 900px; margin: 0 auto; background: #2d1b33; padding: 30px; border-radius: 16px; border: 1px solid #7a2e8a; }
-    .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #5a2a6a; padding-bottom: 15px; }
-    .header h1 { color: #c084d8; }
-    .inquiry-item { background: #1f0f24; padding: 15px; border-radius: 8px; border: 1px solid #5a2a6a; margin-top: 15px; }
-    .inquiry-item .property { color: #c084d8; }
-    .inquiry-item .message { margin: 5px 0; color: #f0e0f5; }
-    .inquiry-item .reply { background: #2d1b33; padding: 10px; border-radius: 6px; border-left: 3px solid #b84fd4; margin-top: 8px; }
-    .inquiry-item .status { font-size: 12px; }
-    .status-replied { color: #8aff8a; }
-    .status-pending { color: #ffa500; }
-    .back-link { margin-top: 20px; }
-    .back-link a { color: #c084d8; }
-</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Inquiries – Mtaa-Connect</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 <div class="container">
+    <?php include 'includes/nav.php'; ?>
     <div class="header">
         <h1>📌 My Inquiries</h1>
         <a href="dashboard.php">← Dashboard</a>

@@ -43,31 +43,15 @@ $result = mysqli_query($conn, $query);
 ?>
 <!DOCTYPE html>
 <html>
-<head><title>Inquiries – Mtaa-Connect</title>
-<style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Segoe UI', sans-serif; background: #1a0e1e; padding: 20px; }
-    .container { max-width: 1100px; margin: 0 auto; background: #2d1b33; padding: 30px; border-radius: 16px; border: 1px solid #7a2e8a; }
-    .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #5a2a6a; padding-bottom: 15px; }
-    .header h1 { color: #c084d8; }
-    .inquiry-item { background: #1f0f24; padding: 20px; border-radius: 12px; border: 1px solid #5a2a6a; margin-top: 20px; }
-    .inquiry-item .unread { background: #4a1a5a; color: #c084d8; padding: 2px 12px; border-radius: 12px; font-size: 12px; }
-    .inquiry-item .tenant { color: #d4a0e0; font-weight: bold; }
-    .inquiry-item .property { color: #b77dc2; }
-    .inquiry-item .message { margin: 10px 0; color: #f0e0f5; }
-    .inquiry-item .reply-form { margin-top: 15px; border-top: 1px solid #5a2a6a; padding-top: 15px; }
-    .inquiry-item .reply-form textarea { width: 100%; padding: 10px; border: 2px solid #5a2a6a; border-radius: 8px; background: #2d1b33; color: #f0e0f5; min-height: 80px; resize: vertical; }
-    .inquiry-item .reply-form .btn { padding: 8px 20px; background: linear-gradient(135deg, #8b2f9b, #c84fd4); color: white; border: none; border-radius: 6px; cursor: pointer; }
-    .inquiry-item .reply-form .btn:hover { background: linear-gradient(135deg, #a03fb0, #d86ae6); }
-    .inquiry-item .reply { background: #2d1b33; padding: 10px; border-radius: 8px; margin: 10px 0; border-left: 3px solid #b84fd4; color: #d4a0e0; }
-    .back-link { display: block; margin-top: 20px; }
-    .back-link a { color: #c084d8; text-decoration: none; }
-    .error-msg { background: #3b1a1a; color: #ff8a8a; padding: 12px; border-radius: 8px; margin-bottom: 16px; }
-    .success-msg { background: #1a3b1a; color: #8aff8a; padding: 12px; border-radius: 8px; margin-bottom: 16px; }
-</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inquiries – Mtaa-Connect</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 <div class="container">
+    <?php include 'includes/nav.php'; ?>
     <div class="header">
         <h1>📩 Inquiries</h1>
         <a href="dashboard.php">← Dashboard</a>

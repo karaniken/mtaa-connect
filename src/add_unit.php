@@ -56,44 +56,15 @@ if ($property_id > 0 && !$selected_property) {
 ?>
 <!DOCTYPE html>
 <html>
-<head><title>Add Unit – Mtaa-Connect</title>
-<style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Segoe UI', sans-serif; background: #1a0e1e; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
-    .container { background: #2d1b33; padding: 40px; border-radius: 16px; max-width: 650px; width: 100%; border: 1px solid #7a2e8a; }
-    h1 { text-align: center; color: #c084d8; }
-    .subtitle { text-align: center; color: #b77dc2; margin-bottom: 24px; }
-    label { display: block; color: #d4a0e0; font-weight: 600; margin: 12px 0 5px; }
-    input, select, textarea { width: 100%; padding: 12px; border: 2px solid #5a2a6a; border-radius: 8px; background: #1f0f24; color: #f0e0f5; }
-    input:focus, select:focus, textarea:focus { border-color: #b84fd4; outline: none; }
-    textarea { min-height: 60px; resize: vertical; }
-    .btn { width: 100%; padding: 14px; background: linear-gradient(135deg, #8b2f9b, #c84fd4); color: white; border: none; border-radius: 8px; font-size: 18px; cursor: pointer; }
-    .btn:hover { background: linear-gradient(135deg, #a03fb0, #d86ae6); }
-    .error-msg { background: #3b1a1a; color: #ff8a8a; padding: 12px; border-radius: 8px; margin-bottom: 16px; }
-    .success-msg { background: #1a3b1a; color: #8aff8a; padding: 12px; border-radius: 8px; margin-bottom: 16px; }
-    .back-link { display: block; text-align: center; margin-top: 15px; color: #b77dc2; }
-    .back-link a { color: #c084d8; text-decoration: none; }
-    .form-row { display: flex; gap: 20px; }
-    .form-row > div { flex: 1; }
-    @media (max-width: 600px) { .form-row { flex-direction: column; } }
-    .property-badge { background: #4a1a5a; color: #c084d8; padding: 5px 15px; border-radius: 20px; font-size: 14px; display: inline-block; margin-bottom: 10px; }
-</style>
-<script>
-// Show/hide commercial category based on property type (if property selected)
-function toggleCommercialField() {
-    const propertySelect = document.getElementById('property_select');
-    const commercialDiv = document.getElementById('commercial_div');
-    if (!propertySelect) return;
-    const selectedOption = propertySelect.options[propertySelect.selectedIndex];
-    // If property type is 'commercial', show the commercial category field
-    // We need to store property_type in data attribute of each option.
-    // For simplicity, we'll check the value of a hidden field or just keep it visible.
-    // I'll keep it visible always – landlord can select 'None' if not applicable.
-}
-</script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Unit – Mtaa-Connect</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 <div class="container">
+    <?php include 'includes/nav.php'; ?>
     <h1>🏠 Add Unit</h1>
     <p class="subtitle">Add an apartment/room under a property</p>
 

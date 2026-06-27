@@ -263,3 +263,37 @@ The class diagram maps the core entities: User, Property, Unit, UnitMedia, and I
 The database ERD visualizes the actual table structures and foreign keys. 
 I also wrote a security design document covering authentication, authorization, input validation, SQL injection prevention, and file upload security. 
 This documentation helps demonstrate my understanding of system design principles and will be valuable for the final project report.
+
+
+
+## Week 8: Responsive Web Design & Mobile‑First UI
+**Title:** Making Mtaa‑Connect Fully Responsive with Mobile‑First Approach
+
+### Required Evidence
+
+**Fig 1: Mobile view with hamburger menu open**  
+![Fig 1: Mobile Hamburger](Week8/screenshots/fig1-mobile-hamburger.png)
+
+**Fig 2: Mobile view – browse page (filters stacked)**  
+![Fig 2: Mobile Browse](Week8/screenshots/fig2-mobile-browse.png)
+
+**Fig 3: Tablet view – dashboard with 2‑column layout**  
+![Fig 3: Tablet Dashboard](Week8/screenshots/fig3-tablet-dashboard.png)
+
+**Fig 4: Desktop view – browse with 3‑column grid**  
+![Fig 4: Desktop Browse](Week8/screenshots/fig4-desktop-browse.png)
+
+**Fig 5: Mobile‑first form (registration/inquiry)**  
+![Fig 5: Mobile Form](Week8/screenshots/fig5-mobile-form.png)
+
+**Fig 6: CSS file with media queries**  
+![Fig 6: CSS Code](Week8/screenshots/fig6-css-code.png)
+
+### Student Reflection 
+
+This week I transformed Mtaa‑Connect into a fully responsive, mobile‑first web application. 
+I consolidated all styles into a single `style.css` file and used CSS Grid and Flexbox for layouts. 
+I implemented a hamburger menu for mobile navigation that toggles smoothly. Using media queries, I created breakpoints at 768px (tablet) and 1024px (desktop) to adapt the UI. 
+The browse page now shows filters stacked on mobile and inline on desktop, while unit cards adjust from 1 column to 3+ columns. 
+I tested the responsive design using Chrome DevTools on multiple device sizes. 
+The result is a portal that works seamlessly on phones, tablets, and desktops, making it accessible to all users.

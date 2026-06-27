@@ -1,45 +1,38 @@
 <?php
 session_start();
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit();
 }
-require_once 'config/db.php'; // Updated path
-
+require_once 'config/db.php';
 $fullname = $_SESSION['fullname'];
 $user_type = $_SESSION['user_type'];
-$landlord_id = $_SESSION['user_id']; // For badge count
+$landlord_id = $_SESSION['user_id'];
+
+// Count unread inquiries for landlord badge
+$unread_count = 0;
+if ($user_type === 'landlord') {
+    $unread_query = mysqli_query($conn, "SELECT COUNT(*) as count FROM inquiries i JOIN units u ON i.unit_id = u.id JOIN properties p ON u.property_id = p.id WHERE p.landlord_id = $landlord_id AND i.is_read = FALSE");
+    $unread = mysqli_fetch_assoc($unread_query);
+    $unread_count = $unread['count'] ?? 0;
+}
 ?>
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard – Mtaa-Connect</title>
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', sans-serif; background: #1a0e1e; padding: 20px; }
-        .container { max-width: 1000px; margin: 0 auto; background: #2d1b33; padding: 30px; border-radius: 16px; border: 1px solid #7a2e8a; }
-        .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #5a2a6a; padding-bottom: 15px; }
-        .header h1 { color: #c084d8; }
-        .header .logout a { color: #ff6b6b; text-decoration: none; font-weight: bold; }
-        .welcome { color: #d4a0e0; margin: 20px 0; font-size: 18px; }
-        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 20px; }
-        .card { background: #1f0f24; padding: 20px; border-radius: 12px; border: 1px solid #5a2a6a; }
-        .card h3 { color: #c084d8; }
-        .card p { color: #b77dc2; }
-        .btn { display: inline-block; padding: 10px 20px; background: linear-gradient(135deg, #8b2f9b, #c84fd4); color: white; border: none; border-radius: 8px; text-decoration: none; margin-top: 10px; }
-        .btn:hover { background: linear-gradient(135deg, #a03fb0, #d86ae6); }
-        .role-badge { background: #4a1a5a; color: #c084d8; padding: 5px 15px; border-radius: 20px; font-size: 14px; }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 <div class="container">
-    <div class="header">
-        <h1> Mtaa‑Connect</h1>
-        <div class="logout"><a href="logout.php">Logout</a></div>
-    </div>
+    <?php include 'includes/nav.php'; ?>
     <div class="welcome">
-        Welcome, <?= htmlspecialchars($fullname) ?>! 
-        <span class="role-badge"><?= ucfirst($user_type) ?></span>
+        Welcome, <?= htmlspecialchars($fullname) ?>!
+        <span class="badge"><?= ucfirst($user_type) ?></span>
     </div>
 
     <?php if ($user_type === 'landlord'): ?>
@@ -58,10 +51,7 @@ $landlord_id = $_SESSION['user_id']; // For badge count
                 <h3>📩 Inquiries</h3>
                 <p>Messages from tenants.</p>
                 <?php
-                // Count unread inquiries
-                $unread_query = mysqli_query($conn, "SELECT COUNT(*) as count FROM inquiries i JOIN units u ON i.unit_id = u.id JOIN properties p ON u.property_id = p.id WHERE p.landlord_id = $landlord_id AND i.is_read = FALSE");
-                $unread = mysqli_fetch_assoc($unread_query);
-                $badge = $unread['count'] > 0 ? ' <span style="background:#ff4444; color:white; padding:2px 10px; border-radius:12px; font-size:12px;">' . $unread['count'] . ' new</span>' : '';
+                $badge = $unread_count > 0 ? ' <span style="background:#ff4444; color:white; padding:2px 10px; border-radius:12px; font-size:12px;">' . $unread_count . ' new</span>' : '';
                 ?>
                 <a href="inquiries.php" class="btn">Check Inbox <?= $badge ?></a>
             </div>

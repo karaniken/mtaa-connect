@@ -41,31 +41,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register – Mtaa-Connect</title>
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', sans-serif; background: #1a0e1e; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px; }
-        .container { background: #2d1b33; padding: 40px; border-radius: 16px; box-shadow: 0 8px 30px rgba(128, 0, 128, 0.4); max-width: 500px; width: 100%; border: 1px solid #7a2e8a; }
-        h1 { text-align: center; color: #c084d8; margin-bottom: 8px; font-size: 28px; }
-        .subtitle { text-align: center; color: #b77dc2; margin-bottom: 24px; font-size: 14px; }
-        .form-group { margin-bottom: 18px; }
-        label { display: block; color: #d4a0e0; font-weight: 600; margin-bottom: 5px; font-size: 14px; }
-        input, select { width: 100%; padding: 12px 14px; border: 2px solid #5a2a6a; border-radius: 8px; background: #1f0f24; color: #f0e0f5; font-size: 16px; transition: 0.3s; }
-        input:focus, select:focus { border-color: #b84fd4; outline: none; box-shadow: 0 0 10px rgba(184, 79, 212, 0.3); }
-        .error { color: #ff6b6b; font-size: 13px; margin-top: 4px; display: none; }
-        .error-msg { background: #3b1a1a; color: #ff8a8a; padding: 12px; border-radius: 8px; border-left: 4px solid #ff4444; margin-bottom: 16px; }
-        .success-msg { background: #1a3b1a; color: #8aff8a; padding: 12px; border-radius: 8px; border-left: 4px solid #44ff44; margin-bottom: 16px; }
-        .btn { width: 100%; padding: 14px; background: linear-gradient(135deg, #8b2f9b, #c84fd4); color: white; border: none; border-radius: 8px; font-size: 18px; font-weight: bold; cursor: pointer; transition: 0.3s; }
-        .btn:hover { background: linear-gradient(135deg, #a03fb0, #d86ae6); transform: scale(1.02); }
-        .login-link { text-align: center; margin-top: 18px; color: #b77dc2; }
-        .login-link a { color: #c084d8; text-decoration: none; font-weight: bold; }
-        .login-link a:hover { text-decoration: underline; }
-        .role-group { display: flex; gap: 20px; margin-top: 5px; }
-        .role-group label { display: flex; align-items: center; gap: 8px; color: #d4a0e0; font-weight: normal; font-size: 16px; cursor: pointer; }
-        input[type="radio"] { width: auto; accent-color: #b84fd4; transform: scale(1.2); }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 <div class="container">
+    <?php include 'includes/nav.php'; ?>
     <h1>🏠 Mtaa‑Connect</h1>
     <p class="subtitle">Join your community marketplace</p>
 

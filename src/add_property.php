@@ -31,30 +31,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 <!DOCTYPE html>
 <html>
-<head><title>Add Property – Mtaa-Connect</title>
-<style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Segoe UI', sans-serif; background: #1a0e1e; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
-    .container { background: #2d1b33; padding: 40px; border-radius: 16px; max-width: 650px; width: 100%; border: 1px solid #7a2e8a; }
-    h1 { text-align: center; color: #c084d8; }
-    .subtitle { text-align: center; color: #b77dc2; margin-bottom: 24px; }
-    label { display: block; color: #d4a0e0; font-weight: 600; margin: 12px 0 5px; }
-    input, textarea, select { width: 100%; padding: 12px; border: 2px solid #5a2a6a; border-radius: 8px; background: #1f0f24; color: #f0e0f5; }
-    input:focus, textarea:focus, select:focus { border-color: #b84fd4; outline: none; }
-    textarea { min-height: 100px; resize: vertical; }
-    .btn { width: 100%; padding: 14px; background: linear-gradient(135deg, #8b2f9b, #c84fd4); color: white; border: none; border-radius: 8px; font-size: 18px; cursor: pointer; }
-    .btn:hover { background: linear-gradient(135deg, #a03fb0, #d86ae6); }
-    .error-msg { background: #3b1a1a; color: #ff8a8a; padding: 12px; border-radius: 8px; margin-bottom: 16px; }
-    .success-msg { background: #1a3b1a; color: #8aff8a; padding: 12px; border-radius: 8px; margin-bottom: 16px; }
-    .back-link { display: block; text-align: center; margin-top: 15px; color: #b77dc2; }
-    .back-link a { color: #c084d8; text-decoration: none; }
-    .form-row { display: flex; gap: 20px; }
-    .form-row > div { flex: 1; }
-    @media (max-width: 600px) { .form-row { flex-direction: column; } }
-</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Property – Mtaa-Connect</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 <div class="container">
+    <?php include 'includes/nav.php'; ?>
     <h1>🏠 Add Property</h1>
     <p class="subtitle">List a new building or complex</p>
     <?php if ($error): ?><div class="error-msg"><?= $error ?></div><?php endif; ?>

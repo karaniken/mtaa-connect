@@ -51,44 +51,15 @@ $total_units = mysqli_num_rows($result);
 ?>
 <!DOCTYPE html>
 <html>
-<head><title>Browse Units – Mtaa-Connect</title>
-<style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Segoe UI', sans-serif; background: #1a0e1e; padding: 20px; }
-    .container { max-width: 1300px; margin: 0 auto; background: #2d1b33; padding: 30px; border-radius: 16px; border: 1px solid #7a2e8a; }
-    .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #5a2a6a; padding-bottom: 15px; }
-    .header h1 { color: #c084d8; }
-    .header a { color: #b84fd4; text-decoration: none; margin-left: 15px; }
-    .filter-section { background: #1f0f24; padding: 20px; border-radius: 12px; margin: 20px 0; border: 1px solid #5a2a6a; }
-    .filter-row { display: flex; flex-wrap: wrap; gap: 15px; align-items: end; }
-    .filter-group { flex: 1; min-width: 150px; }
-    .filter-group label { display: block; color: #d4a0e0; font-weight: 600; font-size: 13px; margin-bottom: 4px; }
-    .filter-group input, .filter-group select { width: 100%; padding: 8px 12px; border: 2px solid #5a2a6a; border-radius: 6px; background: #2d1b33; color: #f0e0f5; }
-    .filter-group input:focus, .filter-group select:focus { border-color: #b84fd4; outline: none; }
-    .filter-btn { padding: 8px 25px; background: linear-gradient(135deg, #8b2f9b, #c84fd4); color: white; border: none; border-radius: 6px; cursor: pointer; }
-    .filter-btn:hover { background: linear-gradient(135deg, #a03fb0, #d86ae6); }
-    .filter-btn-reset { background: #5a2a6a; }
-    .filter-btn-reset:hover { background: #7a3a8a; }
-    .results-info { color: #b77dc2; margin-bottom: 15px; }
-    .units-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
-    .unit-card { background: #1f0f24; padding: 18px; border-radius: 12px; border: 1px solid #5a2a6a; transition: 0.3s; }
-    .unit-card:hover { border-color: #b84fd4; transform: translateY(-3px); }
-    .unit-card .thumb { width: 100%; height: 180px; object-fit: cover; border-radius: 8px; margin-bottom: 10px; background: #2d1b33; }
-    .unit-card h3 { color: #c084d8; font-size: 18px; }
-    .unit-card .location { color: #b77dc2; font-size: 14px; }
-    .unit-card .price { color: #d4a0e0; font-size: 22px; font-weight: bold; margin: 5px 0; }
-    .unit-card .details { display: flex; gap: 10px; flex-wrap: wrap; margin: 8px 0; }
-    .unit-card .details span { background: #2d1b33; padding: 2px 12px; border-radius: 12px; color: #b77dc2; font-size: 12px; }
-    .unit-card .badge { background: #4a1a5a; color: #c084d8; padding: 2px 12px; border-radius: 12px; font-size: 12px; display: inline-block; }
-    .unit-card .amenities { color: #b77dc2; font-size: 13px; margin: 5px 0; }
-    .unit-card .btn { display: inline-block; padding: 8px 20px; background: linear-gradient(135deg, #8b2f9b, #c84fd4); color: white; border: none; border-radius: 6px; text-decoration: none; margin-top: 10px; }
-    .unit-card .btn:hover { background: linear-gradient(135deg, #a03fb0, #d86ae6); }
-    .status-vacant { color: #8aff8a; }
-    .no-results { color: #b77dc2; text-align: center; padding: 40px; }
-</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Units – Mtaa-Connect</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 <div class="container">
+    <?php include 'includes/nav.php'; ?>
     <div class="header">
         <h1>🔍 Browse Units</h1>
         <div>

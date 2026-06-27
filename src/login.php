@@ -39,27 +39,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login – Mtaa-Connect</title>
-    <style>
-        /* Same style as register.php – copy from register.php or include common CSS */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', sans-serif; background: #1a0e1e; display: flex; justify-content: center; align-items: center; min-height: 100vh; padding: 20px; }
-        .container { background: #2d1b33; padding: 40px; border-radius: 16px; max-width: 400px; width: 100%; border: 1px solid #7a2e8a; }
-        h1 { text-align: center; color: #c084d8; }
-        .subtitle { text-align: center; color: #b77dc2; margin-bottom: 24px; }
-        label { display: block; color: #d4a0e0; font-weight: 600; margin: 10px 0 5px; }
-        input { width: 100%; padding: 12px; border: 2px solid #5a2a6a; border-radius: 8px; background: #1f0f24; color: #f0e0f5; }
-        input:focus { border-color: #b84fd4; outline: none; }
-        .error-msg { background: #3b1a1a; color: #ff8a8a; padding: 12px; border-radius: 8px; margin-bottom: 16px; }
-        .btn { width: 100%; padding: 14px; background: linear-gradient(135deg, #8b2f9b, #c84fd4); color: white; border: none; border-radius: 8px; font-size: 18px; cursor: pointer; }
-        .btn:hover { background: linear-gradient(135deg, #a03fb0, #d86ae6); }
-        .register-link { text-align: center; margin-top: 18px; color: #b77dc2; }
-        .register-link a { color: #c084d8; text-decoration: none; }
-        .error { color: #ff6b6b; font-size: 13px; display: none; }
-    </style>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 <div class="container">
+    <?php include 'includes/nav.php'; ?>
     <h1>🏠 Mtaa‑Connect</h1>
     <p class="subtitle">Login to your account</p>
 
