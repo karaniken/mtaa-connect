@@ -53,6 +53,7 @@ I installed Apache, MariaDB, and PHP on Arch Linux to set up a local development
 
 ## Week 2: Wireframes and Database Schema  
 
+
 **Title:** User Interface Planning and System Design for Mtaa‑Connect
 
 ### Required Evidence
@@ -85,6 +86,7 @@ This week I designed the wireframes for Mtaa‑Connect, focusing on the landlord
 
 
 ## Week 3: JavaScript Validation and PHP Registration  
+
 **Title:** Frontend Interaction and Backend Foundations for Mtaa‑Connect
 
 ### Required Evidence
@@ -122,6 +124,7 @@ This exercise reinforced the importance of layered validation and secure data ha
 
 
 ## Week 4: Login System and Session Management  
+
 **Title:** User Authentication and Role‑Based Access for Mtaa‑Connect
 
 ### Required Evidence
@@ -157,7 +160,8 @@ This provides a secure foundation for future features like property CRUD and inq
 
 
 
-## Week 5: Property & Unit CRUD Operations  
+## Week 5: Property & Unit CRUD Operations
+  
 **Title:** Building the Core Portal – Property Management for Landlords and Browsing for Tenants
 
 ### Required Evidence
@@ -191,7 +195,8 @@ I also learned about foreign keys and cascading deletes to maintain data integri
 The portal is now ready for the final phase: inquiries and notifications.
 
 
-## Week 6: Inquiries and Notifications (CAT 1 Preparation)
+## Week 6: Inquiries and Notifications.
+
 **Title:** Connecting Tenants and Landlords – Inquiry & Reply System
 
 ### Required Evidence
@@ -222,3 +227,39 @@ Landlords can reply directly from the inquiries page, and tenants can view their
 The system uses a dedicated `inquiries` table with `is_read` and `replied` flags to track communication status. 
 I also integrated unread counts into the dashboard, providing real‑time notifications. 
 This feature transforms the platform from a static listing site into an interactive marketplace where landlords and tenants can communicate seamlessly.
+
+
+
+## Week 7: Architecture & Design (UML, Security)
+**Title:** Documenting System Structure and Security Design for Mtaa‑Connect
+
+### Required Evidence
+
+**Fig 1: Multi‑Tier Architecture Diagram**  
+![Fig 1: Architecture](Week7/screenshots/fig1-architecture.png)
+
+**Fig 2: UML Use Case Diagram**  
+![Fig 2: Use Case](Week7/screenshots/fig2-usecase.png)
+
+**Fig 3: UML Class Diagram**  
+![Fig 3: Class Diagram](Week7/screenshots/fig3-class.png)
+
+**Fig 4: Database ERD**  
+![Fig 4: ERD](Week7/screenshots/fig4-erd.png)
+
+**Fig 5: Security Design Document**  
+![Fig 5: Security](Week7/screenshots/fig5-security.png)
+
+**Fig 6: Additional Design Diagram**  
+![Fig 6: Additional](Week7/screenshots/fig6-additional.png)
+
+### Student Reflection.
+
+This week I documented the architecture and design of Mtaa‑Connect using UML diagrams. 
+I created a three‑tier architecture diagram showing the presentation (HTML/CSS/JS), business logic (PHP), and data (MySQL) layers. 
+The use case diagram identifies three actors: Landlord, Tenant, and Guest, with their respective functionalities. 
+
+The class diagram maps the core entities: User, Property, Unit, UnitMedia, and Inquiry, with their relationships. 
+The database ERD visualizes the actual table structures and foreign keys. 
+I also wrote a security design document covering authentication, authorization, input validation, SQL injection prevention, and file upload security. 
+This documentation helps demonstrate my understanding of system design principles and will be valuable for the final project report.
